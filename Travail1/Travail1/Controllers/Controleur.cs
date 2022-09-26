@@ -13,6 +13,7 @@ namespace Travail1.Controllers
     {
         private Case[] cases;
         private Joueur[] joueurs;
+        public Random random=new Random(9);
 
         public Joueur[] Joueurs { get => joueurs; }
 
@@ -24,10 +25,32 @@ namespace Travail1.Controllers
 
         private void InitialiserCases()
         {
+            
             cases = new Case[64];
             for (int i = 0; i < cases.Length; i++)
             {
-                cases[i] = new Case(new Points(0), i);
+                float resultatRandom=random.NextSingle();
+                if (resultatRandom<0.6)
+                {
+                    cases[i] = new CaseBase(new Points(0), i);
+                    
+                }
+                else if (resultatRandom<0.7)
+                {
+                    cases[i] = new CaseEchelle(new Points(0), i);
+                }
+                else if (resultatRandom<0.8)
+                {
+                    cases[i] = new CaseSerpent(new Points(0), i);
+                }
+                else if (resultatRandom<0.9)
+                {
+                    cases[i] = new CaseSaut(new Points(0), i);
+                }
+                else
+                {
+                    cases[i] = new CaseTrappe(new Points(0), i);
+                }
             }
         }
 
@@ -46,6 +69,7 @@ namespace Travail1.Controllers
                 foreach (var uneCase in cases)
                 {
                     uneCase.Dessiner(graphics);
+                    
                 }
             }
             return bitmap;
