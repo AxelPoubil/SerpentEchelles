@@ -11,7 +11,7 @@ namespace Travail1.Models
         private int id;
         private string nom;
         private int points;
-        private int position;
+        public int position;
         private Color couleur;
         private int diametre;
 
@@ -21,7 +21,7 @@ namespace Travail1.Models
         public int Position { get => position; set => position = value; }
         public Color Couleur { get => couleur;}
 
-        public event EventHandler ABouger;
+        public event EventHandler<Joueur> ABouger;
 
         public Joueur(int id, string nom, Color couleur)
         {
@@ -56,5 +56,6 @@ namespace Travail1.Models
             }
             return bitmap;
         }
+        
     }
 }

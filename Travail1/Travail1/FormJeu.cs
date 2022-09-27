@@ -24,6 +24,7 @@ namespace Travail1
 
         private void InitAffichageJoueurs()
         {
+            
             affichageJoueurs = new AffichageJoueur[controleur.Joueurs.Length];
             for (int i = 0; i < controleur.Joueurs.Length; ++i)
             {
@@ -34,18 +35,21 @@ namespace Travail1
             {
                 affichageJoueurs[i - 1].Controls.Add(affichageJoueurs[i]);
             }
+            
         }
 
         private void btn_Jouer_Click(object sender, EventArgs e)
         {
             controleur.Jouer();
+            InitAffichageJoueurs();
+            MessageBox.Show(controleur.JoueurCourant.Position.ToString());
             controleur.JoueurSuivant();
         }
 
         private void MettreAjour(Joueur joueur)
         {
-            statsJoueur1.Joueur = controleur.JoueurCourant;
-            affichageJoueurs[controleur.JoueurCourant.Id].joueur = controleur.JoueurCourant;
+            statsJoueur1.Joueur = joueur;
+
         }
 
         private void Abonnement()

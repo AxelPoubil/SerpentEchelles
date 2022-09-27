@@ -25,7 +25,7 @@ namespace Travail1.Controls
             get => joueur; set
             {
                 joueur = value;
-                joueur.Dessiner();
+                Image=joueur.Dessiner();
 
             }
         }

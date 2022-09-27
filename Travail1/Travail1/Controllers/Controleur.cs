@@ -27,7 +27,7 @@ namespace Travail1.Controllers
         public Controleur()
         {
             random = new Random(9);
-            de = new De(6);
+            de = new De(200);
             InitialiserCases();
             InitialiserJoueurs();
             joueurCourant = joueurs[index];
@@ -95,7 +95,7 @@ namespace Travail1.Controllers
         public void Jouer()
         {
             int lancerDe = de.brasserDe();
-            joueurCourant.Position += lancerDe;
+            joueurCourant.position += lancerDe;
         }
     }
 }
