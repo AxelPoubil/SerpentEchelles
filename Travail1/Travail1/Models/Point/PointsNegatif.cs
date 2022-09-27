@@ -11,5 +11,10 @@ namespace Travail1.Models.Point
         public PointsNegatif(int valeur) : base(valeur)
         {
         }
+
+        public override int ObtenirPoints()
+        {
+            return Valeur - Valeur - Valeur;
+        }
     }
 }

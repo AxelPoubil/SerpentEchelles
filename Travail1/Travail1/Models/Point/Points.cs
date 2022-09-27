@@ -15,7 +15,9 @@ namespace Travail1.Models.Point
             this.valeur = valeur;
         }
 
-        public int ObtenirPoints() 
+        public int Valeur { get => valeur;}
+
+        public virtual int ObtenirPoints() 
         {
             return valeur;
         }

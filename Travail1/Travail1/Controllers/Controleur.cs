@@ -13,14 +13,24 @@ namespace Travail1.Controllers
     {
         private Case[] cases;
         private Joueur[] joueurs;
-        public Random random=new Random(9);
+        Joueur joueurCourant;
+        De de;
+        Random random;
+        int index = 0;
+        
 
         public Joueur[] Joueurs { get => joueurs; }
+        public Joueur JoueurCourant { get => joueurCourant; set => joueurCourant = value; }
+
+        public event EventHandler<Joueur> JoueurChanged;
 
         public Controleur()
         {
+            random = new Random(9);
+            de = new De(6);
             InitialiserCases();
             InitialiserJoueurs();
+            joueurCourant = joueurs[index];
         }
 
         private void InitialiserCases()
@@ -57,8 +67,8 @@ namespace Travail1.Controllers
         private void InitialiserJoueurs()
         {
             joueurs = new Joueur[2];
-            joueurs[0] = new Joueur(0, "joueur1", Color.Blue);
-            joueurs[1] = new Joueur(1, "joueur2", Color.Red);
+            joueurs[0] = new Joueur(0, "Remi", Color.Blue);
+            joueurs[1] = new Joueur(1, "Axel", Color.Red);
         }
 
         public Bitmap DessinerPlancheJeu()
@@ -73,6 +83,19 @@ namespace Travail1.Controllers
                 }
             }
             return bitmap;
+        }
+
+        public void JoueurSuivant()
+        {
+            index = (index + 1) % joueurs.Count();
+            joueurCourant = joueurs[index];
+            JoueurChanged.Invoke(this, joueurCourant);
+        }
+
+        public void Jouer()
+        {
+            int lancerDe = de.brasserDe();
+            joueurCourant.Position += lancerDe;
         }
     }
 }

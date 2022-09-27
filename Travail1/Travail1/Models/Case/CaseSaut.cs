@@ -15,9 +15,10 @@ namespace Travail1.Models.Case
         public override void Dessiner(Graphics graphics)
         {
             var coordonees = ObtenirCoordonees();
-            var font = new Font("Calibri", 21);
-            graphics.DrawRectangle(Pens.SkyBlue, coordonees.X, coordonees.Y, Largeur, Largeur);
-            graphics.DrawString((Position + 1).ToString(), font, Brushes.SkyBlue, coordonees.X + 30, coordonees.Y + 30);
+            var font = new Font("Calibri", 20);
+            graphics.DrawRectangle(Pens.Black, coordonees.X, coordonees.Y, Largeur, Largeur);
+            graphics.FillRectangle(Brushes.SkyBlue, coordonees.X + 5, coordonees.Y + 5, Largeur - 10, Largeur - 10);
+            graphics.DrawString((Position + 1).ToString(), font, Brushes.Black, coordonees.X + 30, coordonees.Y + 30);
 
         }
     }

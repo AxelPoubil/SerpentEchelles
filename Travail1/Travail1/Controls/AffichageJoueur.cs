@@ -20,5 +20,14 @@ namespace Travail1.Controls
             Width = 801;
             Image = joueur.Dessiner();
         }
+        public Joueur Joueur
+        {
+            get => joueur; set
+            {
+                joueur = value;
+                joueur.Dessiner();
+
+            }
+        }
     }
 }

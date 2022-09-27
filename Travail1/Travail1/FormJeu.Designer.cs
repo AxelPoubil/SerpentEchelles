@@ -29,11 +29,24 @@
         private void InitializeComponent()
         {
             this.picPlancheJeu = new System.Windows.Forms.PictureBox();
-            this.labelTour = new System.Windows.Forms.Label();
-            this.labelJoueur2 = new System.Windows.Forms.Label();
-            this.labelJoueur1 = new System.Windows.Forms.Label();
-            this.labelPoint = new System.Windows.Forms.Label();
+            this.label_CaseDeBase = new System.Windows.Forms.Label();
+            this.pictBoxLegendBase = new System.Windows.Forms.PictureBox();
+            this.pictBoxLegendEchelle = new System.Windows.Forms.PictureBox();
+            this.label_CaseEchelle = new System.Windows.Forms.Label();
+            this.pictBoxLegendSerpent = new System.Windows.Forms.PictureBox();
+            this.label_CaseSerpent = new System.Windows.Forms.Label();
+            this.pictBoxLegendSaut = new System.Windows.Forms.PictureBox();
+            this.label_CaseSaut = new System.Windows.Forms.Label();
+            this.pictBoxLegendTrappe = new System.Windows.Forms.PictureBox();
+            this.label_CaseTrappe = new System.Windows.Forms.Label();
+            this.statsJoueur1 = new Travail1.Controls.StatsJoueur();
+            this.btn_Jouer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picPlancheJeu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictBoxLegendBase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictBoxLegendEchelle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictBoxLegendSerpent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictBoxLegendSaut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictBoxLegendTrappe)).BeginInit();
             this.SuspendLayout();
             // 
             // picPlancheJeu
@@ -46,59 +59,144 @@
             this.picPlancheJeu.TabIndex = 0;
             this.picPlancheJeu.TabStop = false;
             // 
-            // labelTour
+            // label_CaseDeBase
             // 
-            this.labelTour.AutoSize = true;
-            this.labelTour.Location = new System.Drawing.Point(34, 83);
-            this.labelTour.Name = "labelTour";
-            this.labelTour.Size = new System.Drawing.Size(243, 41);
-            this.labelTour.TabIndex = 1;
-            this.labelTour.Text = "C\'est au tour de :";
+            this.label_CaseDeBase.AutoSize = true;
+            this.label_CaseDeBase.Location = new System.Drawing.Point(277, 331);
+            this.label_CaseDeBase.Name = "label_CaseDeBase";
+            this.label_CaseDeBase.Size = new System.Drawing.Size(166, 32);
+            this.label_CaseDeBase.TabIndex = 5;
+            this.label_CaseDeBase.Text = "Case de base: ";
             // 
-            // labelJoueur2
+            // pictBoxLegendBase
             // 
-            this.labelJoueur2.AutoSize = true;
-            this.labelJoueur2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelJoueur2.Location = new System.Drawing.Point(34, 290);
-            this.labelJoueur2.Name = "labelJoueur2";
-            this.labelJoueur2.Size = new System.Drawing.Size(105, 28);
-            this.labelJoueur2.TabIndex = 2;
-            this.labelJoueur2.Text = "Joueur 2 :";
+            this.pictBoxLegendBase.BackColor = System.Drawing.Color.White;
+            this.pictBoxLegendBase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictBoxLegendBase.Location = new System.Drawing.Point(449, 333);
+            this.pictBoxLegendBase.Name = "pictBoxLegendBase";
+            this.pictBoxLegendBase.Size = new System.Drawing.Size(44, 30);
+            this.pictBoxLegendBase.TabIndex = 10;
+            this.pictBoxLegendBase.TabStop = false;
             // 
-            // labelJoueur1
+            // pictBoxLegendEchelle
             // 
-            this.labelJoueur1.AutoSize = true;
-            this.labelJoueur1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelJoueur1.Location = new System.Drawing.Point(34, 250);
-            this.labelJoueur1.Name = "labelJoueur1";
-            this.labelJoueur1.Size = new System.Drawing.Size(105, 28);
-            this.labelJoueur1.TabIndex = 3;
-            this.labelJoueur1.Text = "Joueur 1 :";
+            this.pictBoxLegendEchelle.BackColor = System.Drawing.Color.Gray;
+            this.pictBoxLegendEchelle.Location = new System.Drawing.Point(449, 374);
+            this.pictBoxLegendEchelle.Name = "pictBoxLegendEchelle";
+            this.pictBoxLegendEchelle.Size = new System.Drawing.Size(44, 30);
+            this.pictBoxLegendEchelle.TabIndex = 12;
+            this.pictBoxLegendEchelle.TabStop = false;
             // 
-            // labelPoint
+            // label_CaseEchelle
             // 
-            this.labelPoint.AutoSize = true;
-            this.labelPoint.Location = new System.Drawing.Point(34, 200);
-            this.labelPoint.Name = "labelPoint";
-            this.labelPoint.Size = new System.Drawing.Size(114, 41);
-            this.labelPoint.TabIndex = 4;
-            this.labelPoint.Text = "Points :";
+            this.label_CaseEchelle.AutoSize = true;
+            this.label_CaseEchelle.BackColor = System.Drawing.SystemColors.Control;
+            this.label_CaseEchelle.Location = new System.Drawing.Point(284, 372);
+            this.label_CaseEchelle.Name = "label_CaseEchelle";
+            this.label_CaseEchelle.Size = new System.Drawing.Size(159, 32);
+            this.label_CaseEchelle.TabIndex = 11;
+            this.label_CaseEchelle.Text = "Case échelle: ";
+            // 
+            // pictBoxLegendSerpent
+            // 
+            this.pictBoxLegendSerpent.BackColor = System.Drawing.Color.Green;
+            this.pictBoxLegendSerpent.Location = new System.Drawing.Point(449, 416);
+            this.pictBoxLegendSerpent.Name = "pictBoxLegendSerpent";
+            this.pictBoxLegendSerpent.Size = new System.Drawing.Size(44, 30);
+            this.pictBoxLegendSerpent.TabIndex = 14;
+            this.pictBoxLegendSerpent.TabStop = false;
+            // 
+            // label_CaseSerpent
+            // 
+            this.label_CaseSerpent.AutoSize = true;
+            this.label_CaseSerpent.Location = new System.Drawing.Point(280, 414);
+            this.label_CaseSerpent.Name = "label_CaseSerpent";
+            this.label_CaseSerpent.Size = new System.Drawing.Size(163, 32);
+            this.label_CaseSerpent.TabIndex = 13;
+            this.label_CaseSerpent.Text = "Case serpent: ";
+            // 
+            // pictBoxLegendSaut
+            // 
+            this.pictBoxLegendSaut.BackColor = System.Drawing.Color.SkyBlue;
+            this.pictBoxLegendSaut.Location = new System.Drawing.Point(449, 458);
+            this.pictBoxLegendSaut.Name = "pictBoxLegendSaut";
+            this.pictBoxLegendSaut.Size = new System.Drawing.Size(44, 30);
+            this.pictBoxLegendSaut.TabIndex = 16;
+            this.pictBoxLegendSaut.TabStop = false;
+            // 
+            // label_CaseSaut
+            // 
+            this.label_CaseSaut.AutoSize = true;
+            this.label_CaseSaut.Location = new System.Drawing.Point(316, 456);
+            this.label_CaseSaut.Name = "label_CaseSaut";
+            this.label_CaseSaut.Size = new System.Drawing.Size(127, 32);
+            this.label_CaseSaut.TabIndex = 15;
+            this.label_CaseSaut.Text = "Case saut: ";
+            // 
+            // pictBoxLegendTrappe
+            // 
+            this.pictBoxLegendTrappe.BackColor = System.Drawing.Color.Maroon;
+            this.pictBoxLegendTrappe.Location = new System.Drawing.Point(449, 500);
+            this.pictBoxLegendTrappe.Name = "pictBoxLegendTrappe";
+            this.pictBoxLegendTrappe.Size = new System.Drawing.Size(44, 30);
+            this.pictBoxLegendTrappe.TabIndex = 18;
+            this.pictBoxLegendTrappe.TabStop = false;
+            // 
+            // label_CaseTrappe
+            // 
+            this.label_CaseTrappe.AutoSize = true;
+            this.label_CaseTrappe.Location = new System.Drawing.Point(291, 498);
+            this.label_CaseTrappe.Name = "label_CaseTrappe";
+            this.label_CaseTrappe.Size = new System.Drawing.Size(152, 32);
+            this.label_CaseTrappe.TabIndex = 17;
+            this.label_CaseTrappe.Text = "Case trappe: ";
+            // 
+            // statsJoueur1
+            // 
+            this.statsJoueur1.Location = new System.Drawing.Point(3, 9);
+            this.statsJoueur1.Margin = new System.Windows.Forms.Padding(6);
+            this.statsJoueur1.Name = "statsJoueur1";
+            this.statsJoueur1.Size = new System.Drawing.Size(240, 566);
+            this.statsJoueur1.TabIndex = 19;
+            // 
+            // btn_Jouer
+            // 
+            this.btn_Jouer.Location = new System.Drawing.Point(12, 414);
+            this.btn_Jouer.Name = "btn_Jouer";
+            this.btn_Jouer.Size = new System.Drawing.Size(231, 129);
+            this.btn_Jouer.TabIndex = 20;
+            this.btn_Jouer.Text = "Jouer";
+            this.btn_Jouer.UseVisualStyleBackColor = true;
+            this.btn_Jouer.Click += new System.EventHandler(this.btn_Jouer_Click);
             // 
             // FormJeu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1341, 836);
-            this.Controls.Add(this.labelPoint);
-            this.Controls.Add(this.labelJoueur1);
-            this.Controls.Add(this.labelJoueur2);
-            this.Controls.Add(this.labelTour);
+            this.Controls.Add(this.btn_Jouer);
+            this.Controls.Add(this.statsJoueur1);
+            this.Controls.Add(this.pictBoxLegendTrappe);
+            this.Controls.Add(this.label_CaseTrappe);
+            this.Controls.Add(this.pictBoxLegendSaut);
+            this.Controls.Add(this.label_CaseSaut);
+            this.Controls.Add(this.pictBoxLegendSerpent);
+            this.Controls.Add(this.label_CaseSerpent);
+            this.Controls.Add(this.pictBoxLegendEchelle);
+            this.Controls.Add(this.label_CaseEchelle);
+            this.Controls.Add(this.pictBoxLegendBase);
+            this.Controls.Add(this.label_CaseDeBase);
             this.Controls.Add(this.picPlancheJeu);
             this.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormJeu";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.picPlancheJeu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictBoxLegendBase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictBoxLegendEchelle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictBoxLegendSerpent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictBoxLegendSaut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictBoxLegendTrappe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,9 +205,17 @@
         #endregion
 
         private PictureBox picPlancheJeu;
-        private Label labelTour;
-        private Label labelJoueur2;
-        private Label labelJoueur1;
-        private Label labelPoint;
+        private Label label_CaseDeBase;
+        private PictureBox pictBoxLegendBase;
+        private PictureBox pictBoxLegendEchelle;
+        private Label label_CaseEchelle;
+        private PictureBox pictBoxLegendSerpent;
+        private Label label_CaseSerpent;
+        private PictureBox pictBoxLegendSaut;
+        private Label label_CaseSaut;
+        private PictureBox pictBoxLegendTrappe;
+        private Label label_CaseTrappe;
+        private Controls.StatsJoueur statsJoueur1;
+        private Button btn_Jouer;
     }
 }
