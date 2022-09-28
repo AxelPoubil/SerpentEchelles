@@ -16,5 +16,11 @@ namespace Travail1.Controllers
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormJeu formJeu = new FormJeu();
+            formJeu.ShowDialog();
+        }
     }
 }

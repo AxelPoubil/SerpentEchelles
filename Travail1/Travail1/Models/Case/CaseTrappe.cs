@@ -22,5 +22,9 @@ namespace Travail1.Models.Case
             graphics.DrawString((Position + 1).ToString(), font, Brushes.Black, coordonees.X + 30, coordonees.Y + 30);
 
         }
+        public override int Deplacement()
+        {
+            return Random.Next(-11, -5);
+        }
     }
 }

@@ -40,16 +40,15 @@ namespace Travail1
 
         private void btn_Jouer_Click(object sender, EventArgs e)
         {
+            FinDePartie();
             controleur.Jouer();
-            InitAffichageJoueurs();
-            MessageBox.Show(controleur.JoueurCourant.Position.ToString());
             controleur.JoueurSuivant();
+
         }
 
         private void MettreAjour(Joueur joueur)
         {
             statsJoueur1.Joueur = joueur;
-
         }
 
         private void Abonnement()
@@ -60,6 +59,19 @@ namespace Travail1
         private void Controleur_JoueurChanged(object? sender, Joueur joueur)
         {
             MettreAjour(joueur);
+        }
+
+        private void FinDePartie()
+        {
+            if (controleur.JoueurCourant.Position >= 63)
+            {
+                controleur.JoueurCourant.Position = 63;
+                DialogResult result = MessageBox.Show(controleur.JoueurCourant.Nom + " a gagné la partie");
+                if (result == DialogResult.OK)
+                {
+                    this.Close();
+                }
+            }
         }
     }
 }

@@ -30,21 +30,23 @@ namespace Travail1.Controls
 
         private void AffichageStatsJoueur()
         {
-            if (Joueur.Id==0)
+            if (Joueur != null)
             {
-                labelTour.Text = "C'est au tour de : " + Joueur.Nom;
-                labelTour.ForeColor = Joueur.Couleur;
-                labelJoueur1.Text = "Joueur 1 : "+ Joueur.Points;
-                labelPoint.Text = "Points : " + Joueur.Points;
-            }
-            else
-            {
-                labelTour.Text = "C'est au tour de : " + Joueur.Nom;
-                labelTour.ForeColor = Joueur.Couleur;
-                labelJoueur2.Text = "Joueur 1 : " + Joueur.Points;
-                labelPoint.Text = "Points : " + Joueur.Points;
-            }
-            
+                if (Joueur.Id == 0)
+                {
+                    labelTour.Text = "C'est au tour de : " + Joueur.Nom;
+                    labelTour.ForeColor = Joueur.Couleur;
+                    labelJoueur1.Text = "Joueur 1 : " + Joueur.Points;
+                    labelPoint.Text = "Points : " + Joueur.Points;
+                }
+                else
+                {
+                    labelTour.Text = "C'est au tour de : " + Joueur.Nom;
+                    labelTour.ForeColor = Joueur.Couleur;
+                    labelJoueur2.Text = "Joueur 1 : " + Joueur.Points;
+                    labelPoint.Text = "Points : " + Joueur.Points;
+                }
+            }            
         }
     }
 }

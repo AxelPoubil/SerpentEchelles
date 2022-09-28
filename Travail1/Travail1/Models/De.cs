@@ -20,7 +20,7 @@ namespace Travail1.Models
 
         public int brasserDe()
         {
-            int resultat=random.Next(0, nbFace + 1);
+            int resultat=random.Next(1, nbFace + 1);
             return resultat;
         }
         

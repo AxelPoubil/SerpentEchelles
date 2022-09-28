@@ -13,9 +13,11 @@ namespace Travail1.Models.Case
         private Points points;
         private int position;
         private int largeur;
-        public int Points {get => points.ObtenirPoints(); }
+        private Random random = new Random();
+        public int Points {get => points.ObtenirPoints(); set => points.ObtenirPoints(); }
         public int Largeur { get => largeur;}
         public int Position { get => position;}
+        public Random Random { get => random; set => random = value; }
 
         public Case(Points points, int position)
         {
@@ -41,6 +43,10 @@ namespace Travail1.Models.Case
             var font = new Font("Calibri", 20);
             graphics.DrawRectangle(Pens.Black, coordonees.X, coordonees.Y, largeur, largeur);
             graphics.DrawString((position + 1).ToString(), font, Brushes.Black, coordonees.X + 30, coordonees.Y + 30);
+        }
+        public virtual int Deplacement()
+        {
+            return 0;
         }
     }
 }

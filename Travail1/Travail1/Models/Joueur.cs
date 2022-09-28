@@ -17,7 +17,7 @@ namespace Travail1.Models
 
         public int Id { get => id; }
         public string Nom { get => nom; }
-        public int Points { get => points; }
+        public int Points { get => points; set => points = value; }
         public int Position { get => position; set => position = value; }
         public Color Couleur { get => couleur;}
 
@@ -55,6 +55,11 @@ namespace Travail1.Models
                 graphics.FillEllipse(brush, coordonees.X, coordonees.Y, diametre, diametre);
             }
             return bitmap;
+        }
+
+        public void Bouger()
+        {
+            ABouger.Invoke(this, this);
         }
         
     }
