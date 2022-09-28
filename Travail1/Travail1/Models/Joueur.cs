@@ -16,7 +16,7 @@ namespace Travail1.Models
         private int diametre;
 
         public int Id { get => id; }
-        public string Nom { get => nom; }
+        public string Nom { get => nom; set => nom = value; }
         public int Points { get => points; set => points = value; }
         public int Position { get => position; set => position = value; }
         public Color Couleur { get => couleur;}

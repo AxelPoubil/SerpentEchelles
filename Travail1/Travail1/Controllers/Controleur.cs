@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,8 +69,8 @@ namespace Travail1.Controllers
         private void InitialiserJoueurs()
         {
             joueurs = new Joueur[2];
-            joueurs[0] = new Joueur(0, "Remi", Color.Blue);
-            joueurs[1] = new Joueur(1, "Axel", Color.Red);
+            joueurs[0] = new Joueur(0, "", Color.Blue);
+            joueurs[1] = new Joueur(1, "", Color.Red);
         }
 
         public Bitmap DessinerPlancheJeu()
@@ -96,9 +97,10 @@ namespace Travail1.Controllers
         public void Jouer()
         {
             int lancerDe = de.brasserDe();            
-            joueurCourant.position += lancerDe;
+            joueurCourant.Position += lancerDe;
             joueurCourant.Bouger();
-            if (joueurCourant.Position<0)
+            
+            if (joueurCourant.Position < 0)
             {
                 joueurCourant.Position = 0;
             }
@@ -106,8 +108,10 @@ namespace Travail1.Controllers
             {
                 joueurCourant.Position = 62;
             }
-            joueurCourant.Points += cases[joueurCourant.Position + 1].Points;
-            joueurCourant.Position += cases[joueurCourant.Position + 1].Deplacement();
+            joueurCourant.Position += cases[joueurCourant.Position].Deplacement();
+            joueurCourant.Points += cases[joueurCourant.Position].Points;
+            
+            Debug.WriteLine(joueurCourant.Position.ToString());
             JoueurChanged.Invoke(this, joueurCourant);            
         } 
         

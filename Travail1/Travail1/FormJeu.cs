@@ -10,10 +10,12 @@ namespace Travail1
         private Controleur controleur;
         private AffichageJoueur[] affichageJoueurs;
 
-        public FormJeu()
+        public FormJeu(string nomJoueur1, string nomJoueur2)
         {
             InitializeComponent();
             controleur = new Controleur();
+            controleur.Joueurs[0].Nom = nomJoueur1;
+            controleur.Joueurs[1].Nom = nomJoueur2;
             picPlancheJeu.Image = controleur.DessinerPlancheJeu();
             InitAffichageJoueurs();
             Abonnement();
@@ -65,7 +67,6 @@ namespace Travail1
         {
             if (controleur.JoueurCourant.Position >= 63)
             {
-                controleur.JoueurCourant.Position = 63;
                 DialogResult result = MessageBox.Show(controleur.JoueurCourant.Nom + " a gagné la partie");
                 if (result == DialogResult.OK)
                 {
