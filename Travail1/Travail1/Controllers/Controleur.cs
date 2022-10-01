@@ -19,6 +19,7 @@ namespace Travail1.Controllers
         Random random;
         int index = 0;
         
+        
 
         public Joueur[] Joueurs { get => joueurs; }
         public Joueur JoueurCourant { get => joueurCourant; set => joueurCourant = value; }
@@ -43,25 +44,24 @@ namespace Travail1.Controllers
                 float resultatRandom=random.NextSingle();
                 if (resultatRandom<0.6)
                 {
-                    cases[i] = new CaseBase(new Points(i), i);
+                    cases[i] = new CaseBase(new PointsBase(i), i);
                     
                 }
                 else if (resultatRandom<0.7)
                 {
-                    cases[i] = new CaseEchelle(new Points(i), i);
-                    Console.WriteLine(i);
+                    cases[i] = new CaseEchelle(new PointsQuitteDouble(i), i);
                 }
                 else if (resultatRandom<0.8)
                 {
-                    cases[i] = new CaseSerpent(new Points(i), i);
+                    cases[i] = new CaseSerpent(new PointsNegatif(i), i);
                 }
                 else if (resultatRandom<0.9)
                 {
-                    cases[i] = new CaseSaut(new Points(i), i);
+                    cases[i] = new CaseSaut(new PointsQuitteDouble(i), i);
                 }
                 else
                 {
-                    cases[i] = new CaseTrappe(new Points(i), i);
+                    cases[i] = new CaseTrappe(new PointsNegatif(i), i);
                 }
             }
         }
@@ -96,23 +96,26 @@ namespace Travail1.Controllers
 
         public void Jouer()
         {
-            int lancerDe = de.brasserDe();            
+            int lancerDe = de.brasserDe();
             joueurCourant.Position += lancerDe;
             joueurCourant.Bouger();
+
+            Debug.WriteLine("de "+lancerDe);
+            Debug.WriteLine("deplacement "+joueurCourant.position + joueurCourant.Nom);
+
+            while (cases[joueurCourant.position].Type != "Base")
+            {
+                joueurCourant.Position += cases[joueurCourant.Position].DeplacementSpecial();
+                joueurCourant.Bouger();
+                Debug.WriteLine("deplacement special " + joueurCourant.position + " " + joueurCourant.Nom);
+            }
+
             
-            if (joueurCourant.Position < 0)
-            {
-                joueurCourant.Position = 0;
-            }
-            else if (joueurCourant.Position > 62)
-            {
-                joueurCourant.Position = 62;
-            }
-            joueurCourant.Position += cases[joueurCourant.Position].Deplacement();
+           
             joueurCourant.Points += cases[joueurCourant.Position].Points;
+            JoueurChanged.Invoke(this, joueurCourant);
             
-            Debug.WriteLine(joueurCourant.Position.ToString());
-            JoueurChanged.Invoke(this, joueurCourant);            
+
         } 
         
     }

@@ -17,8 +17,46 @@ namespace Travail1.Models
 
         public int Id { get => id; }
         public string Nom { get => nom; set => nom = value; }
-        public int Points { get => points; set => points = value; }
-        public int Position { get => position; set => position = value; }
+        public int Points { get => points; set 
+            {
+                if (points+ value < 0) 
+                {
+                    points = 0;
+                }
+                else
+                {
+                    points = value;
+                }
+            } 
+        }
+        public int Position { get => position; set {
+
+                if (Position+value<0)
+                {
+                    position=0;
+                    return;
+                }
+                if (value<0)
+                {
+                    position += value;
+                }
+                else 
+                {
+                    position=value;
+                }
+                gagngat();
+                
+            } 
+        }
+
+        private void gagngat()
+        {
+            if (Position>63)
+            {
+                position = 63;
+            }
+        }
+
         public Color Couleur { get => couleur;}
 
         public event EventHandler<Joueur> ABouger;

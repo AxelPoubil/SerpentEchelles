@@ -18,11 +18,11 @@ namespace Travail1.Models.Case
             var font = new Font("Calibri", 20);
             graphics.DrawRectangle(Pens.Black, coordonees.X, coordonees.Y, Largeur, Largeur);
             graphics.FillRectangle(Brushes.Gray, coordonees.X + 5, coordonees.Y + 5, Largeur - 10, Largeur - 10);
-            graphics.DrawString((Position + 1).ToString(), font, Brushes.Black, coordonees.X + 30, coordonees.Y + 30);
+            graphics.DrawString((Position ).ToString(), font, Brushes.Black, coordonees.X + 30, coordonees.Y + 30);
 
         }
 
-        public override int Deplacement()
+        public override int DeplacementSpecial()
         {
             return Random.Next(1 ,15);
         }

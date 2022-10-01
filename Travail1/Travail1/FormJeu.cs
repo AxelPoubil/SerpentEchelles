@@ -42,9 +42,11 @@ namespace Travail1
 
         private void btn_Jouer_Click(object sender, EventArgs e)
         {
-            FinDePartie();
+            
             controleur.Jouer();
+            FinDePartie();
             controleur.JoueurSuivant();
+            
 
         }
 

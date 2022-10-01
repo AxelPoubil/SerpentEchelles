@@ -62,9 +62,10 @@
             // label_CaseDeBase
             // 
             this.label_CaseDeBase.AutoSize = true;
-            this.label_CaseDeBase.Location = new System.Drawing.Point(277, 331);
+            this.label_CaseDeBase.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_CaseDeBase.Location = new System.Drawing.Point(333, 416);
             this.label_CaseDeBase.Name = "label_CaseDeBase";
-            this.label_CaseDeBase.Size = new System.Drawing.Size(166, 32);
+            this.label_CaseDeBase.Size = new System.Drawing.Size(133, 28);
             this.label_CaseDeBase.TabIndex = 5;
             this.label_CaseDeBase.Text = "Case de base: ";
             // 
@@ -72,7 +73,7 @@
             // 
             this.pictBoxLegendBase.BackColor = System.Drawing.Color.White;
             this.pictBoxLegendBase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictBoxLegendBase.Location = new System.Drawing.Point(449, 333);
+            this.pictBoxLegendBase.Location = new System.Drawing.Point(472, 416);
             this.pictBoxLegendBase.Name = "pictBoxLegendBase";
             this.pictBoxLegendBase.Size = new System.Drawing.Size(44, 30);
             this.pictBoxLegendBase.TabIndex = 10;
@@ -81,7 +82,7 @@
             // pictBoxLegendEchelle
             // 
             this.pictBoxLegendEchelle.BackColor = System.Drawing.Color.Gray;
-            this.pictBoxLegendEchelle.Location = new System.Drawing.Point(449, 374);
+            this.pictBoxLegendEchelle.Location = new System.Drawing.Point(472, 457);
             this.pictBoxLegendEchelle.Name = "pictBoxLegendEchelle";
             this.pictBoxLegendEchelle.Size = new System.Drawing.Size(44, 30);
             this.pictBoxLegendEchelle.TabIndex = 12;
@@ -91,16 +92,17 @@
             // 
             this.label_CaseEchelle.AutoSize = true;
             this.label_CaseEchelle.BackColor = System.Drawing.SystemColors.Control;
-            this.label_CaseEchelle.Location = new System.Drawing.Point(284, 372);
+            this.label_CaseEchelle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_CaseEchelle.Location = new System.Drawing.Point(340, 457);
             this.label_CaseEchelle.Name = "label_CaseEchelle";
-            this.label_CaseEchelle.Size = new System.Drawing.Size(159, 32);
+            this.label_CaseEchelle.Size = new System.Drawing.Size(126, 28);
             this.label_CaseEchelle.TabIndex = 11;
             this.label_CaseEchelle.Text = "Case échelle: ";
             // 
             // pictBoxLegendSerpent
             // 
             this.pictBoxLegendSerpent.BackColor = System.Drawing.Color.Green;
-            this.pictBoxLegendSerpent.Location = new System.Drawing.Point(449, 416);
+            this.pictBoxLegendSerpent.Location = new System.Drawing.Point(472, 499);
             this.pictBoxLegendSerpent.Name = "pictBoxLegendSerpent";
             this.pictBoxLegendSerpent.Size = new System.Drawing.Size(44, 30);
             this.pictBoxLegendSerpent.TabIndex = 14;
@@ -109,16 +111,17 @@
             // label_CaseSerpent
             // 
             this.label_CaseSerpent.AutoSize = true;
-            this.label_CaseSerpent.Location = new System.Drawing.Point(280, 414);
+            this.label_CaseSerpent.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_CaseSerpent.Location = new System.Drawing.Point(336, 499);
             this.label_CaseSerpent.Name = "label_CaseSerpent";
-            this.label_CaseSerpent.Size = new System.Drawing.Size(163, 32);
+            this.label_CaseSerpent.Size = new System.Drawing.Size(131, 28);
             this.label_CaseSerpent.TabIndex = 13;
             this.label_CaseSerpent.Text = "Case serpent: ";
             // 
             // pictBoxLegendSaut
             // 
             this.pictBoxLegendSaut.BackColor = System.Drawing.Color.SkyBlue;
-            this.pictBoxLegendSaut.Location = new System.Drawing.Point(449, 458);
+            this.pictBoxLegendSaut.Location = new System.Drawing.Point(472, 541);
             this.pictBoxLegendSaut.Name = "pictBoxLegendSaut";
             this.pictBoxLegendSaut.Size = new System.Drawing.Size(44, 30);
             this.pictBoxLegendSaut.TabIndex = 16;
@@ -127,16 +130,17 @@
             // label_CaseSaut
             // 
             this.label_CaseSaut.AutoSize = true;
-            this.label_CaseSaut.Location = new System.Drawing.Point(316, 456);
+            this.label_CaseSaut.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_CaseSaut.Location = new System.Drawing.Point(364, 541);
             this.label_CaseSaut.Name = "label_CaseSaut";
-            this.label_CaseSaut.Size = new System.Drawing.Size(127, 32);
+            this.label_CaseSaut.Size = new System.Drawing.Size(102, 28);
             this.label_CaseSaut.TabIndex = 15;
             this.label_CaseSaut.Text = "Case saut: ";
             // 
             // pictBoxLegendTrappe
             // 
             this.pictBoxLegendTrappe.BackColor = System.Drawing.Color.Maroon;
-            this.pictBoxLegendTrappe.Location = new System.Drawing.Point(449, 500);
+            this.pictBoxLegendTrappe.Location = new System.Drawing.Point(472, 583);
             this.pictBoxLegendTrappe.Name = "pictBoxLegendTrappe";
             this.pictBoxLegendTrappe.Size = new System.Drawing.Size(44, 30);
             this.pictBoxLegendTrappe.TabIndex = 18;
@@ -145,23 +149,25 @@
             // label_CaseTrappe
             // 
             this.label_CaseTrappe.AutoSize = true;
-            this.label_CaseTrappe.Location = new System.Drawing.Point(291, 498);
+            this.label_CaseTrappe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_CaseTrappe.Location = new System.Drawing.Point(347, 583);
             this.label_CaseTrappe.Name = "label_CaseTrappe";
-            this.label_CaseTrappe.Size = new System.Drawing.Size(152, 32);
+            this.label_CaseTrappe.Size = new System.Drawing.Size(124, 28);
             this.label_CaseTrappe.TabIndex = 17;
             this.label_CaseTrappe.Text = "Case trappe: ";
             // 
             // statsJoueur1
             // 
-            this.statsJoueur1.Location = new System.Drawing.Point(3, 9);
+            this.statsJoueur1.Joueur = null;
+            this.statsJoueur1.Location = new System.Drawing.Point(12, 9);
             this.statsJoueur1.Margin = new System.Windows.Forms.Padding(6);
             this.statsJoueur1.Name = "statsJoueur1";
-            this.statsJoueur1.Size = new System.Drawing.Size(240, 566);
+            this.statsJoueur1.Size = new System.Drawing.Size(504, 312);
             this.statsJoueur1.TabIndex = 19;
             // 
             // btn_Jouer
             // 
-            this.btn_Jouer.Location = new System.Drawing.Point(12, 414);
+            this.btn_Jouer.Location = new System.Drawing.Point(12, 330);
             this.btn_Jouer.Name = "btn_Jouer";
             this.btn_Jouer.Size = new System.Drawing.Size(231, 129);
             this.btn_Jouer.TabIndex = 20;
@@ -171,7 +177,7 @@
             // 
             // FormJeu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1341, 836);
             this.Controls.Add(this.btn_Jouer);

@@ -43,7 +43,7 @@ namespace Travail1.Controls
                 {
                     labelTour.Text = "C'est au tour de : " + Joueur.Nom;
                     labelTour.ForeColor = Joueur.Couleur;
-                    labelJoueur2.Text = "Joueur 1 : " + Joueur.Points;
+                    labelJoueur2.Text = "Joueur 2 : " + Joueur.Points;
                     labelPoint.Text = "Points : " + Joueur.Points;
                 }
             }            
