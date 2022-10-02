@@ -9,7 +9,7 @@ namespace Travail1.Models.Case
 {
     class CaseEchelle : CaseBase
     {
-        public CaseEchelle(Points points, int position) : base(points, position)
+        public CaseEchelle(Points points, int position, string type) : base(points, position,type)
         {
         }
         public override void Dessiner(Graphics graphics)

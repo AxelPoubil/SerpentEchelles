@@ -44,12 +44,12 @@ namespace Travail1.Models
                 {
                     position=value;
                 }
-                gagngat();
+                Gagnant();
                 
             } 
         }
 
-        private void gagngat()
+        private void Gagnant()
         {
             if (Position>63)
             {

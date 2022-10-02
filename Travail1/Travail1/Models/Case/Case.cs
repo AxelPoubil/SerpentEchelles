@@ -21,11 +21,12 @@ namespace Travail1.Models.Case
         public Random Random { get => random; set => random = value; }
         public string Type { get => type;}
 
-        public Case(Points points, int position)
+        public Case(Points points, int position, string type)
         {
             this.points = points;
             this.position = position;
             this.largeur = 100;
+            this.type = type;
         }
 
         protected PointF ObtenirCoordonees()

@@ -9,7 +9,7 @@ namespace Travail1.Models.Case
 {
     class CaseBase : Case
     {
-        public CaseBase(Points points, int position) : base(points, position)
+        public CaseBase(Points points, int position, string type) : base(points, position,type)
         {
         }
         

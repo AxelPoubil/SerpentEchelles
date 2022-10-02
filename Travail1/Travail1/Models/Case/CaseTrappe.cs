@@ -9,7 +9,7 @@ namespace Travail1.Models.Case
 {
     class CaseTrappe : CaseSerpent
     {
-        public CaseTrappe(Points points, int position) : base(points, position)
+        public CaseTrappe(Points points, int position, string type) : base(points, position,type)
         {
             
         }
@@ -24,7 +24,7 @@ namespace Travail1.Models.Case
         }
         public override int DeplacementSpecial()
         {
-            return Random.Next(-11, -5);
+            return Random.Next(-10, -4);
         }
     }
 }

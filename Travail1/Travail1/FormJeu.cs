@@ -69,7 +69,7 @@ namespace Travail1
         {
             if (controleur.JoueurCourant.Position >= 63)
             {
-                DialogResult result = MessageBox.Show(controleur.JoueurCourant.Nom + " a gagné la partie");
+                DialogResult result = MessageBox.Show(controleur.finDePartie());
                 if (result == DialogResult.OK)
                 {
                     this.Close();
