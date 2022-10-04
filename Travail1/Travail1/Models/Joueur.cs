@@ -11,16 +11,55 @@ namespace Travail1.Models
         private int id;
         private string nom;
         private int points;
-        private int position;
+        public int position;
         private Color couleur;
         private int diametre;
 
         public int Id { get => id; }
-        public string Nom { get => nom; }
-        public int Points { get => points; }
-        public int Position { get => position; }
+        public string Nom { get => nom; set => nom = value; }
+        public int Points { get => points; set 
+            {
+                if (points+ value < 0) 
+                {
+                    points = 0;
+                }
+                else
+                {
+                    points = value;
+                }
+            } 
+        }
+        public int Position { get => position; set {
 
-        public event EventHandler ABouger;
+                if (Position+value<0)
+                {
+                    position=0;
+                    return;
+                }
+                if (value<0)
+                {
+                    position += value;
+                }
+                else 
+                {
+                    position=value;
+                }
+                Gagnant();
+                
+            } 
+        }
+
+        private void Gagnant()
+        {
+            if (Position>63)
+            {
+                position = 63;
+            }
+        }
+
+        public Color Couleur { get => couleur;}
+
+        public event EventHandler<Joueur> ABouger;
 
         public Joueur(int id, string nom, Color couleur)
         {
@@ -55,5 +94,11 @@ namespace Travail1.Models
             }
             return bitmap;
         }
+
+        public void Bouger()
+        {
+            ABouger.Invoke(this, this);
+        }
+        
     }
 }

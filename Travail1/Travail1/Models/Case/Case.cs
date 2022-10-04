@@ -11,17 +11,22 @@ namespace Travail1.Models.Case
     public class Case
     {
         private Points points;
+        private string type;
         private int position;
         private int largeur;
-        public int Points {get => points.ObtenirPoints(); }
+        private Random random = new Random();
+        public int Points {get => points.ObtenirPoints(); set => points.ObtenirPoints(); }
         public int Largeur { get => largeur;}
         public int Position { get => position;}
+        public Random Random { get => random; set => random = value; }
+        public string Type { get => type;}
 
-        public Case(Points points, int position)
+        public Case(Points points, int position, string type)
         {
             this.points = points;
             this.position = position;
             this.largeur = 100;
+            this.type = type;
         }
 
         protected PointF ObtenirCoordonees()
@@ -40,7 +45,11 @@ namespace Travail1.Models.Case
             var coordonees = ObtenirCoordonees();
             var font = new Font("Calibri", 20);
             graphics.DrawRectangle(Pens.Black, coordonees.X, coordonees.Y, largeur, largeur);
-            graphics.DrawString((position + 1).ToString(), font, Brushes.Black, coordonees.X + 30, coordonees.Y + 30);
+            graphics.DrawString((position).ToString(), font, Brushes.Black, coordonees.X + 30, coordonees.Y + 30);
+        }
+        public virtual int DeplacementSpecial()
+        {
+            return 0;
         }
     }
 }

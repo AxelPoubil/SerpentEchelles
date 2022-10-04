@@ -19,6 +19,26 @@ namespace Travail1.Controls
             Height = 801;
             Width = 801;
             Image = joueur.Dessiner();
+            Abonnement();
+        }
+        public Joueur Joueur
+        {
+            get => joueur; set
+            {
+                joueur = value;
+                Image=joueur.Dessiner();
+
+            }
+        }
+
+        void Abonnement ()
+        {
+            joueur.ABouger += Joueur_ABouger;
+        }
+
+        private void Joueur_ABouger(object? sender, Joueur joueur)
+        {
+            Image = joueur.Dessiner();
         }
     }
 }

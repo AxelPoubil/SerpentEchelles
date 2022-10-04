@@ -9,16 +9,22 @@ namespace Travail1.Models.Case
 {
     class CaseSerpent : CaseBase
     {
-        public CaseSerpent(Points points, int position) : base(points, position)
+        public CaseSerpent(Points points, int position, string type) : base(points, position,type)
         {
         }
         public override void Dessiner(Graphics graphics)
         {
             var coordonees = ObtenirCoordonees();
             var font = new Font("Calibri", 20);
-            graphics.DrawRectangle(Pens.Green, coordonees.X, coordonees.Y, Largeur, Largeur);
-            graphics.DrawString((Position + 1).ToString(), font, Brushes.Green, coordonees.X + 30, coordonees.Y + 30);
+            graphics.DrawRectangle(Pens.Black, coordonees.X, coordonees.Y, Largeur, Largeur);
+            graphics.FillRectangle(Brushes.Green, coordonees.X + 5, coordonees.Y + 5, Largeur - 10, Largeur - 10);
+            graphics.DrawString((Position ).ToString(), font, Brushes.Black, coordonees.X + 30, coordonees.Y + 30);
 
+        }
+
+        public override int DeplacementSpecial()
+        {
+            return Random.Next(-15, -1);
         }
     }
 }
